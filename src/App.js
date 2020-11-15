@@ -12,19 +12,14 @@ function App() {
         setInput('');
     }
 
-    return (
-        <div className="App">
-            <h1>Hi</h1>
-            <input value={input} onChange={event => setInput(event.target.value)}/>
-            <button onClick={sendMessage}>Send Message</button>
+    return <div className="App">
+        <h1>Messenger</h1>
+        <input value={input} onChange={event => setInput(event.target.value)}/>
+        <button onClick={sendMessage}>Send Message</button>
 
-            {
-                messages.map(message =>{
-                    <p>{message}</p>
-                })
-            }
-        </div>
-    );
+        {messages.map(message => <p>{message}</p>)}
+
+    </div>
 }
 
 export default App;
