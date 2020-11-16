@@ -10,7 +10,8 @@ function App() {
     const [username, setUsername]=useState('');
 
     useEffect(()=>{
-
+        // const username= prompt('Please enter your name');
+        setUsername(prompt('Please enter your name'));
     },[])
 
     const sendMessage = (event)=>{
@@ -22,6 +23,7 @@ function App() {
     return <div className="App">
 
         <h1>Hey Mate! 😃</h1>
+        <h2>Welcome {username}</h2>
         <form>
             <FormControl>
                 <InputLabel>Enter a message...</InputLabel>
