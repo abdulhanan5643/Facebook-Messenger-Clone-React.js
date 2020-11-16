@@ -1,13 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, FormControl, Input, InputLabel} from "@material-ui/core";
+import Message from "./Message";
 import './App.css';
 
 function App() {
 
     const [input, setInput] = useState('');
     const [messages,setMessages]=useState([]);
+    const [username, setUsername]=useState('');
 
-    console.log(messages);
+    useEffect(()=>{
+
+    },[])
+
     const sendMessage = (event)=>{
         event.preventDefault();
         setMessages([...messages,input]);
@@ -27,7 +32,9 @@ function App() {
         </form>
 
 
-        {messages.map(message => <p key={message}>{message}</p>)}
+        {
+            messages.map(message => <Message text={message} />)
+        }
 
     </div>
 }
