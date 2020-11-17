@@ -13,7 +13,7 @@ function App() {
     const [username, setUsername]=useState('');
 
     useEffect(()=>{
-        db.collection('messages').onSnapshot(snapshot=>{
+        db.collection('messages').orderBy('timestamp', 'asc').onSnapshot(snapshot=>{
             setMessages(snapshot.docs.map(doc=>doc.data()))})
     },[])
 
@@ -34,8 +34,8 @@ function App() {
 
     return <div className="App">
 
-        <h1>Hey Mate! 😃</h1>
-        <h2>Welcome {username}</h2>
+        <h1>Messenger 💬</h1>
+        <h2>Welcome {username} 😃</h2>
         <form>
             <FormControl>
                 <InputLabel>Enter a message...</InputLabel>
