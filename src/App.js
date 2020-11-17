@@ -6,7 +6,7 @@ import './App.css';
 function App() {
 
     const [input, setInput] = useState('');
-    const [messages,setMessages]=useState([{username:'Ismail', text:'Oye mery paisy dy...'},{username: 'Usama', text: 'Kanjra menu phraye c?'}]);
+    const [messages,setMessages]=useState([]);
     const [username, setUsername]=useState('');
 
     useEffect(()=>{
@@ -35,7 +35,7 @@ function App() {
 
 
         {
-            messages.map(message => <Message username={message.username} text={message.text} />)
+            messages.map(message => <Message username={username} message={message} />)
         }
 
     </div>
