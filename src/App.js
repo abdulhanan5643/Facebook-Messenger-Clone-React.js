@@ -6,15 +6,14 @@ import './App.css';
 function App() {
 
     const [input, setInput] = useState('');
-    const [messages,setMessages]=useState([]);
-    const [username, setUsername]=useState('');
+    const [messages, setMessages] = useState([]);
+    const [username, setUsername] = useState('');
 
-    useEffect(()=>{
-        // const username= prompt('Please enter your name');
+    useEffect(() => {
         setUsername(prompt('Please enter your name'));
-    },[])
+    }, [])
 
-    const sendMessage = (event)=>{
+    const sendMessage = (event) => {
         event.preventDefault();
         setMessages([...messages, {username: username, text: input}]);
         setInput('');
@@ -35,7 +34,7 @@ function App() {
 
 
         {
-            messages.map(message => <Message username={username} message={message} />)
+            messages.map(message => <Message username={username} message={message}/>)
         }
 
     </div>
