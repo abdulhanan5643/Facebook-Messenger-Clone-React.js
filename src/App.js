@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, FormControl, Input, InputLabel} from "@material-ui/core";
 import Message from "./Message";
 import './App.css';
+import db from "./firebase";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
 
     useEffect(()=>{
         db.collection('messages').onSnapshot(snapshot=>{
-            setMessages(snapshot.docs.map(doc=>doc.data))})
+            setMessages(snapshot.docs.map(doc=>doc.data()))})
     },[])
 
     useEffect(()=>{
@@ -20,7 +21,7 @@ function App() {
 
     const sendMessage = (event)=>{
         event.preventDefault();
-        setMessages([...messages, {username: username, text: input}]);
+        setMessages([...messages, {username: username, message: input}]);
         setInput('');
     }
 
