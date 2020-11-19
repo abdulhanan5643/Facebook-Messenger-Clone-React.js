@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FormControl, Input, InputLabel} from "@material-ui/core";
+import {FormControl, Input} from "@material-ui/core";
 import Message from "./Message";
 import './App.css';
 import db from "./firebase";
@@ -41,10 +41,9 @@ function App() {
         <h1>Messenger 💬</h1>
         <h2>Welcome {username} 😃</h2>
         <form className="app_form">
-            <FormControl>
+            <FormControl className="app-formControl">
                 <div>
-                    <InputLabel>Enter a message...</InputLabel>
-                    <Input value={input} onChange={event => setInput(event.target.value)}/>{"\n"}
+                    <Input placeholder="Enter a message..." value={input} onChange={event => setInput(event.target.value)}/>
                     <IconButton disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>
                         <SendIcon />
                     </IconButton>

@@ -11,3 +11,8 @@
   width: 100%;
   margin: 20px;
 }
+
+.app_formControl{
+  display: flex;
+
+}
