@@ -37,17 +37,16 @@ function App() {
 
     return <div className="App">
 
-        <img src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100" alt="Messenger Logo" />
-        <h1>Messenger 💬</h1>
-        <h2>Welcome {username} 😃</h2>
-        <form className="app_form">
+        <img className="app-image" src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100" alt="Facebook-messenger-logo" />
+        <h1 className="app-title">
+            Welcome <strong className="user">{username}</strong> <strong className="emoji">😉😌 </strong>!
+        </h1>
+        <form className="app-form">
             <FormControl className="app-formControl">
-                <div>
-                    <Input placeholder="Enter a message..." value={input} onChange={event => setInput(event.target.value)} />
-                    <IconButton disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>
-                        <SendIcon />
-                    </IconButton>
-                </div>
+                <Input className="app-input" placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)} />
+                <IconButton className="app-iconButton" disabled={!input} variant="contained" color="primary" type="submit" onClick={sendMessage}>
+                    <SendIcon />
+                </IconButton>
             </FormControl>
         </form>
 
